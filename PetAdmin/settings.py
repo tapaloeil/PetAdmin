@@ -21,7 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'r!$u8600_8&^7bt6&u01=m51)x$v9-&%wb@li+24!v1**d*)j@'
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+ALLOWED_HOSTS = ['*']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
