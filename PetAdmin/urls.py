@@ -10,6 +10,7 @@ urlpatterns = [
 	url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
 	url(r'^admin/', admin.site.urls),
 	url(r'^tinymce/',include('tinymce.urls')),
+	url(r'^$',  admin.site.urls),
 ]
 
 if settings.DEBUG:
