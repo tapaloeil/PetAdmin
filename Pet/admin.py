@@ -3,7 +3,7 @@ from .models import PetModel, PetImageModel
 from jet.admin import CompactInline
 # Register your models here.
 
-class PetImageModelAdmin(CompactInline):
+class PetImageModelAdmin(admin.StackedInline):
 	model=PetImageModel
 
 class PetModelAdmin(admin.ModelAdmin):

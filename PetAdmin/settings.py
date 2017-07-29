@@ -32,8 +32,9 @@ DEBUG = True
 INSTALLED_APPS = [
 	'storages',
 	'braces',
-	'jet',
-	'django.contrib.admin',
+	#'jet',
+	'djangocms_admin_style',
+	'django.contrib.admin',	
 	'django.contrib.auth',
 	'django.contrib.sites',
 	'django.contrib.contenttypes',
@@ -127,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'fr'
+LANGUAGE_CODE = 'en-US'
 TIME_ZONE = 'Europe/Paris'
 USE_I18N = True
 USE_L10N = True
