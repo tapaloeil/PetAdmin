@@ -112,7 +112,14 @@ JET_SIDE_MENU_COMPACT = True
 # easy thumbnail / filer
 THUMBNAIL_HIGH_RESOLUTION = True
 
-
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+FILER_ALLOW_REGULAR_USERS_TO_ADD_ROOT_FOLDERS=True
 #Crispy FORM TAGs SETTINGS
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
