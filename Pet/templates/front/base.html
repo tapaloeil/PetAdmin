@@ -33,10 +33,6 @@
     {% include "front/navbar.html" %}
 {% endif %}
 <div class="wrapper">
-    {% include "front/header.html" %}
-    {% if user.is_authenticated %}
-        {% include "front/navigation.html" %}
-    {% endif %}
     {% block content %}
 
     {% endblock %}
