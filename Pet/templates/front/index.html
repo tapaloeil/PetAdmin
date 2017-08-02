@@ -1,0 +1,56 @@
+{% extends 'front/base.html' %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+    <div class="space-50"></div>
+    <div class="main main-raised">
+        <div class="section section-full-screen">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <div class="card card-signup">
+                            <form class="form" method="" action="">
+                            {% csrf_token %}
+                                <div class="header header-primary text-center">
+                                    <h3>ARESP</h3>
+                                    <h4>FA et Animaux</h4>
+                                </div>
+
+                                <ul class="nav nav-pills" role="tablist">
+                                    <!--
+                                        color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                                    -->
+                                    <li>
+                                        <a href="{% url 'full' %}" role="tab" data-toggle="tab">
+                                            <i class="material-icons">pets</i>
+                                            Liste des animaux
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'full' %}" role="tab" data-toggle="tab">
+                                            <i class="material-icons">control_point</i>
+                                            Ajouter un animal
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'full' %}" role="tab" data-toggle="tab">
+                                            <i class="material-icons">contacts</i>
+                                            Liste des familles d'accueil
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'full' %}" role="tab" data-toggle="tab">
+                                            <i class="material-icons">person_add</i>
+                                            Ajouter une famille d'accueil
+                                        </a>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

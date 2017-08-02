@@ -51,8 +51,9 @@ INSTALLED_APPS = [
 	'mptt',
 	'rest_framework',
 	'crispy_forms',
-	'allauth',
-	'allauth.account'
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
