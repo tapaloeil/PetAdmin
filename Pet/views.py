@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PetModel
+from .models import PetModel, FA
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
@@ -15,3 +15,16 @@ def index(request):
 def pets(request):
 	pets = PetModel.objects.all()
 	return render(request, 'front/pets.html', {'allpets': pets})
+
+@login_required
+def add_pet(request):
+    return render(request, 'front/form_pet.html',{})
+
+@login_required
+def fa(request):
+    fa = FA.objects.all()
+    return render(request, 'front/fa.html', {"allfa": fa})
+
+@login_required
+def add_fa(request):
+    return render(request, 'front/form_fa.html',{})

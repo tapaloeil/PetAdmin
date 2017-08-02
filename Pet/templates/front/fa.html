@@ -17,25 +17,20 @@
                                     <thead>
                                         <tr>
                                             <th>Nom</th>
-                                            <th>Categorie</th>
-                                            <th>Sexe</th>
-                                            <th>Age</th>
-                                            <th>Dpt</th>
-                                            <th>Statut</th>
-                                            <th>FA</th>
+                                            <th>CP</th>
+                                            <th>Telephone</th>
+                                            <th>Habitation</th>
+                                            <th>Taille</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for pet in allpets %}
+                                        {% for fa in allfa %}
                                         <tr>
-                                            <td>{{ pet.Name }}</td>
-                                            <td>{{ pet.Category }}</td>
-                                            <td>{{ pet.Sex }}</td>
-                                            <td>{{ pet.BirthDt }}</td>
-                                            <td>{{ pet.Departement }}</td>
-                                            <td>{{ pet.Status }}</td>
-                                            <td>{{ pet.FA }}</td>
-                                            <td>{{ pet.Priority }}</td>
+                                            <td>{{ fa.Prenom }} {{ fa.Nom }}</td>
+                                            <td>{{ fa.CP }}</td>
+                                            <td>{{ fa.Telephone }}</td>
+                                            <td>{{ fa.TypeMaison }}</td>
+                                            <td>{{ fa.TailleMaison }}</td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>
