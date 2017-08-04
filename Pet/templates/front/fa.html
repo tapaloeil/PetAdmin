@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-block">
+                            <div id="no-more-tables" class="card-block">
                                 <table class="table table-bordered table-striped table-sm">
                                     <thead>
                                         <tr>
@@ -26,11 +26,11 @@
                                     <tbody>
                                         {% for fa in allfa %}
                                         <tr>
-                                            <td>{{ fa.Prenom }} {{ fa.Nom }}</td>
-                                            <td>{{ fa.CP }}</td>
-                                            <td>{{ fa.Telephone }}</td>
-                                            <td>{{ fa.TypeMaison }}</td>
-                                            <td>{{ fa.TailleMaison }}</td>
+                                            <td data-title="Nom">{{ fa.Prenom }} {{ fa.Nom }}</td>
+                                            <td data-title="CP">{{ fa.CP }}</td>
+                                            <td data-title="Telephone">{{ fa.Telephone }}</td>
+                                            <td data-title="Habitation">{{ fa.TypeMaison }}</td>
+                                            <td data-title="Taille">{{ fa.TailleMaison }}</td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>

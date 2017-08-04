@@ -73,7 +73,7 @@
 }
 
 .section-full-screen{
-    background-image: url('../img/city.jpg');
+    background-image: url('../img/bg-kitten.jpg');
     background-size: cover; 
     background-position: top center; 
     min-height: 700px;
@@ -414,4 +414,87 @@
 
 .nav-pills>li{
     float: none;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    /* Force table to not be like tables anymore */
+    #no-more-tables table, 
+    #no-more-tables thead, 
+    #no-more-tables tbody, 
+    #no-more-tables th, 
+    #no-more-tables td, 
+    #no-more-tables tr { 
+        display: block; 
+    }
+ 
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #no-more-tables thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+ 
+    #no-more-tables tr { border: 1px solid #ccc; }
+ 
+    #no-more-tables td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+        white-space: normal;
+        text-align:left;
+    }
+ 
+    #no-more-tables td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align:left;
+        font-weight: bold;
+    }
+ 
+    /*
+    Label the data
+    */
+    #no-more-tables td:before { content: attr(data-title); }
+}
+
+.nav-tabs > li .material-icons {
+    margin:0;
+}
+
+
+@media (max-width: 768px){
+.main-raised {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+}
+
+.card-inverse .card-blockquote, .card-inverse .card-footer, .card-inverse .card-header, .card-inverse .card-title {
+    color: #fff;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+}
+
+.card-inverse .card-blockquote .blockquote-footer, .card-inverse .card-link, .card-inverse .card-subtitle, .card-inverse .card-text {
+    color: rgba(255,255,255,.65);
 }

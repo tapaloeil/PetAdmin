@@ -56,7 +56,7 @@ materialKit = {
         navbar_menu_visible: 0
     },
 
-    checkScrollForTransparentNavbar: debounce(function() {
+    /*checkScrollForTransparentNavbar: debounce(function() {
             if($(document).scrollTop() > 260 ) {
                 if(transparent) {
                     transparent = false;
@@ -68,7 +68,7 @@ materialKit = {
                     $('.navbar-color-on-scroll').addClass('navbar-transparent');
                 }
             }
-    }, 17),
+    }, 17),*/
 
     initSliders: function(){
         // Sliders for demo purpose

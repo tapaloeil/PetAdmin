@@ -9,41 +9,24 @@
     <div class="section section-full-screen section-signup">
         <div class="container-fluid">
             <div class="animated fadeIn">
+
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-block">
-                                <table class="table table-bordered table-striped table-sm">
-                                    <thead>
-                                        <tr>
-                                            <th>Nom</th>
-                                            <th>Categorie</th>
-                                            <th>Sexe</th>
-                                            <th>Age</th>
-                                            <th>Dpt</th>
-                                            <th>Statut</th>
-                                            <th>FA</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {% for pet in allpets %}
-                                        <tr>
-                                            <td>{{ pet.Name }}</td>
-                                            <td>{{ pet.Category }}</td>
-                                            <td>{{ pet.Sex }}</td>
-                                            <td>{{ pet.BirthDt }}</td>
-                                            <td>{{ pet.Departement }}</td>
-                                            <td>{{ pet.Status }}</td>
-                                            <td>{{ pet.FA }}</td>
-                                            <td>{{ pet.Priority }}</td>
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
+                    {% for pet in allpets %}
+                    <div class="col-sm-2">
+                        <div class="card card-inverse">
+                        <img src="{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}" class="img-card img-responsive" />
+                        <div class="card-img-overlay">
+                            <h4 class="card-title">{{ pet.Name }}</h4>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">{{ pet.Sex }} {{ pet.BirthDt }} {{ pet.Departement }} {{ pet.Status }}</small></p>
+                          </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
+
+
+
             </div>
         </div>
     </div>

@@ -1,0 +1,196 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon_aresp.eot?2pcwh');
+  src:  url('../fonts/icomoon_aresp.eot?2pcwh#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon_aresp.ttf?2pcwh') format('truetype'),
+    url('../fonts/icomoon_aresp.woff?2pcwh') format('woff'),
+    url('../fonts/icomoon_aresp.svg?2pcwh#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-female:before {
+  content: "\e93e";
+}
+.icon-male:before {
+  content: "\e93f";
+}
+.icon-baby_face:before {
+  content: "\e900";
+}
+.icon-baby_face_no:before {
+  content: "\e901";
+}
+.icon-baby_face_question:before {
+  content: "\e902";
+}
+.icon-cat_face .path1:before {
+  content: "\e917";
+  color: ;
+}
+.icon-cat_face .path2:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path3:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path4:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path5:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path6:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path7:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path8:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path9:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face .path10:before {
+  content: "\e920";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_no .path1:before {
+  content: "\e921";
+  color: ;
+}
+.icon-cat_face_no .path2:before {
+  content: "\e937";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_no .path3:before {
+  content: "\e938";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_no .path4:before {
+  content: "\e939";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_no .path5:before {
+  content: "\e93a";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_no .path6:before {
+  content: "\e93b";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_no .path7:before {
+  content: "\e93c";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_no .path8:before {
+  content: "\e93d";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path1:before {
+  content: "\e922";
+  color: ;
+}
+.icon-cat_face_question .path2:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path3:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path4:before {
+  content: "\e925";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path5:before {
+  content: "\e926";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path6:before {
+  content: "\e92a";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path7:before {
+  content: "\e92b";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path8:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: ;
+}
+.icon-cat_face_question .path9:before {
+  content: "\e936";
+  margin-left: -1em;
+  color: ;
+}
+.icon-dog_face:before {
+  content: "\e927";
+}
+.icon-dog_face_no:before {
+  content: "\e928";
+}
+.icon-dog_face_question:before {
+  content: "\e929";
+}
+.icon-male_female:before {
+  content: "\e92c";
+}
+.icon-no:before {
+  content: "\e933";
+}
+.icon-questionmark:before {
+  content: "\e934";
+}
+
+.font-large [class^="icon-"],.font-large  [class*=" icon-"]{
+  vertical-align: middle;
+  font-size: 24px;
+}
