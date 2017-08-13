@@ -6,13 +6,14 @@ from filer.fields.image import FilerImageField
 from model_utils.models import TimeStampedModel
 from django.utils.timezone import now
 
-OKCH=(
-	("Y","Oui"),
-	("N","Non"),
-	("U","Je ne sais pas")
-)
+
 
 class FA (TimeStampedModel):
+	OKCH=(
+		("Y","Oui"),
+		("N","Non"),
+		("U","Je ne sais pas")
+	)
 	Nom=models.CharField(max_length=100, verbose_name="Nom")
 	Prenom=models.CharField(max_length=100, verbose_name="Prénom")
 	Adresse=models.CharField(max_length=100, verbose_name="Adresse", blank=True, null=True)
@@ -45,6 +46,11 @@ class FA (TimeStampedModel):
 		verbose_name_plural="Familles d'accueil"
 
 class PetModel(TimeStampedModel):
+	OKCH=(
+		("Y","Oui"),
+		("N","Non"),
+		("U","Je ne sais pas")
+	)
 	CATEG_CH=(
 		("Chien","Chien"),
 		("Chat","Chat")

@@ -14,7 +14,10 @@ def index(request):
 @login_required
 def pets(request):
 	pets = PetModel.objects.all()
-	return render(request, 'front/pets.html', {'allpets': pets, "currPage":"pets"})
+	categ = PetModel.CATEG_CH
+	sex =PetModel.SEX_CH
+	okch = PetModel.OKCH
+	return render(request, 'front/pets.html', {'categchoices':categ, 'sexchoices':sex, 'okchoices':okch, 'allpets': pets, "currPage":"pets"})
 
 @login_required
 def add_pet(request):
