@@ -40,6 +40,10 @@ class FA (TimeStampedModel):
 	def __str__(self):
 		return "%s %s | %s | %s" % (self.Prenom, self.Nom, self.CP, self.Telephone)
 
+	class Meta:
+		verbose_name="Famille d'accueil"
+		verbose_name_plural="Familles d'accueil"
+
 class PetModel(TimeStampedModel):
 	CATEG_CH=(
 		("Chien","Chien"),
@@ -67,7 +71,11 @@ class PetModel(TimeStampedModel):
 	OK_ENFANT=models.CharField(max_length=1, choices=OKCH, default="U", verbose_name="OK Enfants ?")
 	FA=models.ForeignKey(FA, verbose_name="Famille d'accueil", blank=True, null=True)
 
+	class Meta:
+		verbose_name='Animal'
+		verbose_name_plural="Animaux"
+
 class PetImageModel(TimeStampedModel):
-	Pet=models.ForeignKey(PetModel, verbose_name='Animal')
-	Image= FilerImageField(related_name="product_image")
+	Pet=models.ForeignKey(PetModel, related_name='PetPhotos')
+	Image= FilerImageField()
 

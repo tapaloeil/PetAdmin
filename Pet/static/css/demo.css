@@ -480,11 +480,12 @@
 
 .card-img-overlay {
     position: absolute;
-    top: 0;
+    top: auto;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1.25rem;
+    padding-left: 1.25rem;
+    padding-top: 1.25rem;
 }
 
 .card-inverse .card-blockquote, .card-inverse .card-footer, .card-inverse .card-header, .card-inverse .card-title {
@@ -493,6 +494,13 @@
 
 .card-title {
     margin-bottom: .75rem;
+    color: white; 
+    font: bold 24px/45px Helvetica, Sans-Serif;  
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    float:left;
 }
 
 .card-inverse .card-blockquote .blockquote-footer, .card-inverse .card-link, .card-inverse .card-subtitle, .card-inverse .card-text {

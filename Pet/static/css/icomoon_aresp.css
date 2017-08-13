@@ -25,18 +25,25 @@
 }
 
 .icon-female:before {
+  color:#ff8baf!important;
   content: "\e93e";
+  
 }
 .icon-male:before {
+  color:#89c6ec!important;
   content: "\e93f";
+  
 }
 .icon-baby_face:before {
   content: "\e900";
+  color: #5df75d;
 }
 .icon-baby_face_no:before {
   content: "\e901";
+  color:red;
 }
 .icon-baby_face_question:before {
+  color: #fb862d;
   content: "\e902";
 }
 .icon-cat_face .path1:before {
@@ -176,9 +183,11 @@
 }
 .icon-dog_face_no:before {
   content: "\e928";
+  color: red;
 }
 .icon-dog_face_question:before {
   content: "\e929";
+  color: #fb862d;
 }
 .icon-male_female:before {
   content: "\e92c";
@@ -193,4 +202,16 @@
 .font-large [class^="icon-"],.font-large  [class*=" icon-"]{
   vertical-align: middle;
   font-size: 24px;
+}
+
+.green-icon{
+    color: #5df75d;
+}
+
+.red-icon{
+  color:red;
+}
+
+.orange-icon{
+    color: #fb862d;
 }

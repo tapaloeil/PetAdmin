@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PetModel, FA
+from .models import PetModel, PetImageModel, FA
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
@@ -18,13 +18,13 @@ def pets(request):
 
 @login_required
 def add_pet(request):
-    return render(request, 'front/form_pet.html',{"currPage":"pets"})
+	return render(request, 'front/form_pet.html',{"currPage":"pets"})
 
 @login_required
 def fa(request):
-    fa = FA.objects.all()
-    return render(request, 'front/fa.html', {"allfa": fa,"currPage":"fa"})
+	fa = FA.objects.all()
+	return render(request, 'front/fa.html', {"allfa": fa,"currPage":"fa"})
 
 @login_required
 def add_fa(request):
-    return render(request, 'front/form_fa.html',{"currPage":"fa"})
+	return render(request, 'front/form_fa.html',{"currPage":"fa"})

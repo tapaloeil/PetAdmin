@@ -14,10 +14,42 @@
                     {% for pet in allpets %}
                     <div class="col-sm-2">
                         <div class="card card-inverse">
-                        <img src="{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}" class="img-card img-responsive" />
+                        <img src="{% if pet.PetPhotos %}{{ pet.PetPhotos.first.Image.url }}{% else %}{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}{% endif %}" class="img-card img-responsive" />
                         <div class="card-img-overlay">
-                            <h4 class="card-title">{{ pet.Name }}</h4>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h4 class="card-title">{{ pet.Name }}&nbsp;
+                                {% if pet.Sex == "M" %}
+                                    <span class="icon-male"></span>
+                                {% else %}
+                                    <span class="icon-female"></span>
+                                {% endif %}
+                                {% if pet.OK_ENFANT == "Y" %}
+                                    <span class="icon-baby_face"></span>
+                                {% else %}
+                                    {% if pet.OK_ENFANT == "N" %}
+                                       <span class="icon-baby_face_no"></span>
+                                    {% else %}
+                                        <span class="icon-baby_face_question"></span> 
+                                    {% endif %}
+                                {% endif %}
+                                {% if pet.OK_CHIEN == "Y" %}
+                                    <span class="icon-dog_face green-icon"></span>
+                                {% else %}
+                                    {% if pet.OK_CHIEN == "N" %}
+                                       <span class="icon-dog_face_no"></span>
+                                    {% else %}
+                                        <span class="icon-dog_face_question"></span> 
+                                    {% endif %}
+                                {% endif %}
+                                {% if pet.OK_CHAT == "Y" %}
+                                    <span class="icon-cat_face green-icon"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span></span>
+                                {% else %}
+                                    {% if pet.OK_CHAT == "N" %}
+                                       <span class="icon-cat_face_no red-icon"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>
+                                    {% else %}
+                                        <span class="icon-cat_face_question orange-icon"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span></span> 
+                                    {% endif %}
+                                {% endif %}
+                            </h4>
                             <p class="card-text"><small class="text-muted">{{ pet.Sex }} {{ pet.BirthDt }} {{ pet.Departement }} {{ pet.Status }}</small></p>
                           </div>
                         </div>
