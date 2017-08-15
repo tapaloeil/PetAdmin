@@ -134,9 +134,9 @@
                     <div class="col-sm-2">
                         <a href="{% url 'pet-detail' pet.pk %}">
                             <div class="card card-inverse">
-                            <img src="{% if pet.PetPhotos is not None %}{% thumbnail pet.PetPhotos.first.Image 350x350 crop %}{% else %}{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}{% endif %}" class="img-card img-responsive" />
+                            <img src="{% if pet.PetPhotos.first.Image is not None %}{% thumbnail pet.PetPhotos.first.Image 350x350 crop %}{% else %}{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}{% endif %} " width="350px" height="350px"  class="img-card img-responsive" />
                             <div class="card-img-overlay">
-                                <h4 class="card-title">{{ pet.Name }}&nbsp;
+                                <h4 class="card-title">{{ pet.PetName }}&nbsp;
                                     {% if pet.Sex == "M" %}
                                         <span class="icon-male"></span>
                                     {% else %}

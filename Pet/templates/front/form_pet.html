@@ -5,4 +5,22 @@
 {% block head %}
 {% endblock %}
 {% block content %}
+<div class="main main-raised">
+    <div class="section section-full-screen section-signup">
+        <div class="container-fluid">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="content">
+
+                        <form method="POST" action=''>{% csrf_token %}
+                            {{ form.as_p }}
+                            <input class="btn btn-success" type="submit" value="Ajouter">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

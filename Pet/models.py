@@ -56,7 +56,7 @@ class PetModel(TimeStampedModel):
 		("Chat","Chat")
 		)
 	Category = models.CharField(max_length=30, choices=CATEG_CH, default="Chat", verbose_name="Catégorie")
-	Name = models.CharField(max_length=200, verbose_name="Nom de l'animal")
+	PetName = models.CharField(max_length=200, verbose_name="Nom	")
 	Description = HTMLField(blank=True, null=True, verbose_name='Description')
 	SEX_CH=(
 		("M", "Mâle"),
@@ -80,6 +80,9 @@ class PetModel(TimeStampedModel):
 	class Meta:
 		verbose_name='Animal'
 		verbose_name_plural="Animaux"
+
+	def get_absolute_url(self):
+		return "/animal/%i" % self.id
 
 class PetImageModel(TimeStampedModel):
 	Pet=models.ForeignKey(PetModel, related_name='PetPhotos')

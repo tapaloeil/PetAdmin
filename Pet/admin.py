@@ -11,11 +11,11 @@ class PetImageModelAdmin(admin.StackedInline):
 	model=PetImageModel
 
 class PetModelAdmin(admin.ModelAdmin):
-	list_display=("Name","Category","Sex","BirthDt","City","Departement","Status")
+	list_display=("PetName","Category","Sex","BirthDt","City","Departement","Status")
 	list_filter=("Category","Sex", "City", "Departement", "Status")
 	fieldsets=(
 		(None,{
-			'fields':('Name', 'Category', 'Sex',('BirthDt'),'City','Departement','OK_CHAT','OK_CHIEN','OK_ENFANT','Status', 'FA')
+			'fields':('PetName', 'Category', 'Sex',('BirthDt'),'City','Departement','OK_CHAT','OK_CHIEN','OK_ENFANT','Status', 'FA')
 		}),
 		('Description',{
 			'fields':('Description',),

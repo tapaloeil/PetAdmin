@@ -1,13 +1,13 @@
 from django import forms
-from .models import PetModel
+from .models import PetModel, PetImageModel
 
 
 class PetForm(forms.ModelForm):
     class Meta:
         model=PetModel
         fields=[
-            "Name",
             "Category",
+            "PetName",
             "Sex",
             "BirthDt",
             "City",
@@ -17,4 +17,12 @@ class PetForm(forms.ModelForm):
             "OK_ENFANT",
             "FA",
             "Description"
+        ]
+
+class PetPhotoUpload(forms.ModelForm):
+    class Meta:
+        model=PetImageModel
+        fields=[
+            "Pet",
+            "Image"
         ]
