@@ -120,6 +120,12 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters',
 )
 
+THUMBNAIL_ALIASES = {
+    '': {
+        'phone': {'size': (350, 350), 'crop': True},
+    },
+}
+
 FILER_ALLOW_REGULAR_USERS_TO_ADD_ROOT_FOLDERS = True
 
 #Crispy FORM TAGs SETTINGS

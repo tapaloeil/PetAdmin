@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import PetModel, PetImageModel, FA
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.detail import DetailView
 
 @login_required
 def full(request):
@@ -18,6 +20,17 @@ def pets(request):
 	sex =PetModel.SEX_CH
 	okch = PetModel.OKCH
 	return render(request, 'front/pets.html', {'categchoices':categ, 'sexchoices':sex, 'okchoices':okch, 'allpets': pets, "currPage":"pets"})
+
+def  PetDetailView(request, pk):
+	try:
+		pet=PetModel.objects.get(pk=pk)
+		petPhotos=pet.PetPhotos
+		print(petPhotos)
+	except PetModel.DoesNotExist:
+		raise Http404("Cet animal n'est pas référencé")
+
+	return render(request, 'front/detail_pet.html', context={'object':pet,'photos':petPhotos})
+
 
 @login_required
 def add_pet(request):

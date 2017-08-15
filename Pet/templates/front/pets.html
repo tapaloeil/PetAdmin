@@ -7,7 +7,6 @@
 {% block content %}
 
 <div class="main main-raised">
-
     <div class="section section-full-screen section-signup">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -28,15 +27,13 @@
                                 <b class="caret"></b>
                             <div class="ripple-container"></div></a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                {% for ch in categchoices %}
+                                {% for name, ch in categchoices %}
+
                                 <li>
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name="optionsCheckboxes">
-                                                <span class="checkbox-material">
-                                                    <span class="check"></span>
-                                                </span>
-                                            {{ ch.1 }}
+                                            {{ ch }}
                                         </label>
                                     </div>
                                 </li>
@@ -48,7 +45,7 @@
                                 <b class="caret"></b>
                             <div class="ripple-container"></div></a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                {% for ch in sexchoices %}
+                                {% for name,ch in sexchoices %}
                                 <li>
                                     <div class="checkbox">
                                         <label>
@@ -68,7 +65,7 @@
                                 <b class="caret"></b>
                             <div class="ripple-container"></div></a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                {% for ch in okchoices %}
+                                {% for name,ch in okchoices %}
                                 <li>
                                     <div class="checkbox">
                                         <label>
@@ -88,7 +85,8 @@
                                 <b class="caret"></b>
                             <div class="ripple-container"></div></a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                {% for ch in okchoices %}
+                                {% for name,ch in okchoices %}
+
                                 <li>
                                     <div class="checkbox">
                                         <label>
@@ -108,7 +106,7 @@
                                 <b class="caret"></b>
                             <div class="ripple-container"></div></a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                {% for ch in okchoices %}
+                                {% for name,ch in okchoices %}
                                 <li>
                                     <div class="checkbox">
                                         <label>
@@ -135,9 +133,9 @@
                     {% for pet in allpets %}
                     <div class="col-sm-2">
                         <div class="card card-inverse">
-                            <img src="{% if pet.PetPhotos %}{{ pet.PetPhotos.first.Image.url }}{% else %}{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}{% endif %}" class="img-card img-responsive" />
+                            <img src="{% if pet.PetPhotos is not None %}{% thumbnail pet.PetPhotos.first.Image 350x350 crop %}{% else %}{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}{% endif %}" class="img-card img-responsive" />
                             <div class="card-img-overlay">
-                                <h4 class="card-title">{{ pet.Name }}&nbsp;
+                                <h4 class="card-title"><a href="{% url 'pet-detail' pet.pk %}">{{ pet.Name }}</a>&nbsp;
                                     {% if pet.Sex == "M" %}
                                         <span class="icon-male"></span>
                                     {% else %}
@@ -181,16 +179,4 @@
         </div>
     </div>
 </div>
-    <script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.6/mobile-detect.min.js"></script>
-<script type="text/javascript">
-    md = new MobileDetect(
-    'Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i' +
-    ' Build/4.1.A.0.562) AppleWebKit/534.30 (KHTML, like Gecko)' +
-    ' Version/4.0 Mobile Safari/534.30');
-
-// more typically we would instantiate with 'window.navigator.userAgent'
-// as user-agent; this string literal is only for better understanding
-
-console.log( md);
-</script>
 {% endblock %}
