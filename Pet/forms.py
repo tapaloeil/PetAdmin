@@ -3,6 +3,7 @@ from .models import PetModel, PetImageModel
 
 
 class PetForm(forms.ModelForm):
+
     class Meta:
         model=PetModel
         fields=[
@@ -18,6 +19,9 @@ class PetForm(forms.ModelForm):
             "FA",
             "Description"
         ]
+        widgets={
+            "BirthDt":forms.DateInput(attrs={"class":"datepicker"}),
+        }
 
 class PetPhotoUpload(forms.ModelForm):
     class Meta:
