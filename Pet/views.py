@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
+from .forms import PetForm
 
 @login_required
 def full(request):
@@ -22,6 +23,7 @@ def pets(request):
 	return render(request, 'front/pets.html', {'categchoices':categ, 'sexchoices':sex, 'okchoices':okch, 'allpets': pets, "currPage":"pets"})
 
 def  PetDetailView(request, pk):
+	form=PetForm()
 	try:
 		pet=PetModel.objects.get(pk=pk)
 		petPhotos=pet.PetPhotos
@@ -29,7 +31,7 @@ def  PetDetailView(request, pk):
 	except PetModel.DoesNotExist:
 		raise Http404("Cet animal n'est pas référencé")
 
-	return render(request, 'front/detail_pet.html', context={'object':pet,'photos':petPhotos})
+	return render(request, 'front/detail_pet.html', context={'object':pet,'photos':petPhotos, 'form':form})
 
 
 @login_required

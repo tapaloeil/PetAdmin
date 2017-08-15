@@ -132,10 +132,11 @@
                 <div class="row">
                     {% for pet in allpets %}
                     <div class="col-sm-2">
-                        <div class="card card-inverse">
+                        <a href="{% url 'pet-detail' pet.pk %}">
+                            <div class="card card-inverse">
                             <img src="{% if pet.PetPhotos is not None %}{% thumbnail pet.PetPhotos.first.Image 350x350 crop %}{% else %}{% if pet.Category == 'Chien' %}{% static 'img/dog-nopic.png' %} {% endif %}{% if pet.Category == 'Chat' %}{% static 'img/cat-nopic.png' %} {% endif %}{% endif %}" class="img-card img-responsive" />
                             <div class="card-img-overlay">
-                                <h4 class="card-title"><a href="{% url 'pet-detail' pet.pk %}">{{ pet.Name }}</a>&nbsp;
+                                <h4 class="card-title">{{ pet.Name }}&nbsp;
                                     {% if pet.Sex == "M" %}
                                         <span class="icon-male"></span>
                                     {% else %}
@@ -172,6 +173,7 @@
                                 <div class="pet_age"><p>{{ pet.BirthDt|timesince }}</p></div>
                             </div>
                         </div>
+                        </a>
                     </div>
                     {% endfor %}
                 </div>

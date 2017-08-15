@@ -523,3 +523,8 @@ body {
 .card-inverse .card-blockquote .blockquote-footer, .card-inverse .card-link, .card-inverse .card-subtitle, .card-inverse .card-text {
     color: rgba(255,255,255,.65);
 }
+
+.tab-pane{
+    text-align:-webkit-left;
+}
+

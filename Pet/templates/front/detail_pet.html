@@ -103,7 +103,10 @@
                                         {% endfor %}
                                     </div>
                                     <div class="tab-pane" id="modifier">
-                                        <p>Page de modification</p>
+                                        <form>
+                                            {{ form.as_p }}
+                                            <input class="btn btn-success" type="submit" value="Enregistrer les modifications">
+                                        </form>
                                     </div>
                                     <div class="tab-pane" id="addphotos">
                                         <p>Page d'ajout de photos</p>
