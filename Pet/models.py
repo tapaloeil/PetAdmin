@@ -41,6 +41,9 @@ class FA (TimeStampedModel):
 	def __str__(self):
 		return "%s %s | %s | %s" % (self.Prenom, self.Nom, self.CP, self.Telephone)
 
+	def get_absolute_url(self):
+		return "/fa/%i" % self.id
+
 	class Meta:
 		verbose_name="Famille d'accueil"
 		verbose_name_plural="Familles d'accueil"

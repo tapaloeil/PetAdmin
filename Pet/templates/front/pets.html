@@ -128,7 +128,8 @@
         <div class="container-fluid">
 
             <div class="animated fadeIn">
-
+                <a href="{% url 'PetCreate' %}"><button class="btn btn-block  btn-success">Ajouter un chat/chien</button></a>
+                <br>
                 <div class="row">
                     {% for pet in allpets %}
                     <div class="col-sm-2">

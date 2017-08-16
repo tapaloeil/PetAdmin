@@ -25,12 +25,14 @@
                                     </thead>
                                     <tbody>
                                         {% for fa in allfa %}
+                                        
                                         <tr>
                                             <td data-title="Nom">{{ fa.Prenom }} {{ fa.Nom }}</td>
                                             <td data-title="CP">{{ fa.CP }}</td>
                                             <td data-title="Telephone">{{ fa.Telephone }}</td>
                                             <td data-title="Habitation">{{ fa.TypeMaison }}</td>
                                             <td data-title="Taille">{{ fa.TailleMaison }}</td>
+                                            <td data-title="Editer"><a href="{% url 'fa-detail' fa.pk %}"><button class="btn btn-success">Modifier</button></a></td>
                                         </tr>
                                         {% endfor %}
                                     </tbody>

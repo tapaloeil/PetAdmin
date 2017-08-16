@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
-from .forms import PetForm, PetPhotoUpload
+from .forms import PetForm, PetPhotoUpload, FAForm
 from django.http import HttpResponseRedirect
 
 @login_required
@@ -23,6 +23,7 @@ def pets(request):
 	okch = PetModel.OKCH
 	return render(request, 'front/pets.html', {'categchoices':categ, 'sexchoices':sex, 'okchoices':okch, 'allpets': pets, "currPage":"pets"})
 
+@login_required
 def PetCreate(request):
 	form=PetForm(request.POST or None)
 	if form.is_valid():
@@ -31,6 +32,7 @@ def PetCreate(request):
 		return HttpResponseRedirect(pet.get_absolute_url())
 	return render (request, "front/form_pet.html", {"form":form})
 
+@login_required
 def  PetDetailView(request, pk):
 	try:
 		pet=PetModel.objects.get(pk=pk)
@@ -51,10 +53,18 @@ def  PetDetailView(request, pk):
 
 	return render(request, 'front/detail_pet.html', context={'object':pet, 'form':form, 'formPhoto':formPhotos})
 
+def FADetailView(request,pk):
+	try:
+		fa=FA.objects.get(pk=pk)
+		form=FAForm(request.POST or None, instance=fa)
+		if form.is_valid():
+			fa=form.save(commit=False)
+			fa.save()
+			return HttpResponseRedirect(fa.get_absolute_url())
+	except FA.DoesNotExist:
+		raise Http404("Cette FA n'existe pas")
+	return render(request, 'front/form_pet.html', context={'object':form, 'form': form})
 
-@login_required
-def add_pet(request):
-	return render(request, 'front/form_pet.html',{"currPage":"pets"})
 
 @login_required
 def fa(request):
@@ -63,4 +73,9 @@ def fa(request):
 
 @login_required
 def add_fa(request):
-	return render(request, 'front/form_fa.html',{"currPage":"fa"})
+	form=FAForm(request.POST or None)
+	if form.is_valid():
+		fa=form.save(commit=False)
+		fa.save()
+		return HttpResponseRedirect(fa.get_absolute_url())
+	return render(request, 'front/form_pet.html',{"form":form})
