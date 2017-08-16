@@ -35,7 +35,7 @@
 
                                             </li>
                                             <li>
-                                                <a href="#addphotos" data-toggle="tab">
+                                                <a href="#addphotos" data-toggle="tab" id="addphotolink">
                                                     <i class="material-icons">camera_enhance</i>
                                                 </a>
                                             </li>
@@ -109,9 +109,9 @@
                                         </form>
                                     </div>
                                     <div class="tab-pane" id="addphotos">
-                                        <form method="POST" action=''>{% csrf_token %}
+                                        <form method="POST" action=''  enctype="multipart/form-data">{% csrf_token %}
                                             {{ formPhoto.as_p }}
-                                            <input class="btn btn-success" type="submit" value="Enregistrer les modifications">
+                                            <input class="btn btn-success" type="submit" value="Ajouter la photo">
                                         </form>
                                     </div>
                                 </div>

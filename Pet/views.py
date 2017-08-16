@@ -39,9 +39,11 @@ def  PetDetailView(request, pk):
 			pet=form.save(commit=False)
 			pet.save()
 			return HttpResponseRedirect(pet.get_absolute_url())
-		formPhotos=PetPhotoUpload(request.POST or None, initial={"Pet":pet})
+		formPhotos=PetPhotoUpload(request.POST or None, request.FILES or None, initial={"Pet":pet})
 		if formPhotos.is_valid():
-			photo=form.save(commit=False)
+			photo=PetImageModel()
+			photo.Pet=pet
+			photo.Image=formPhotos.cleaned_data["Image"]
 			photo.save()
 			return HttpResponseRedirect(pet.get_absolute_url())
 	except PetModel.DoesNotExist:
@@ -49,14 +51,6 @@ def  PetDetailView(request, pk):
 
 	return render(request, 'front/detail_pet.html', context={'object':pet, 'form':form, 'formPhoto':formPhotos})
 
-def PetImageUpload(request):
-	if request.method=="POST":
-		form=PetPhotoUpload(request.POST, request.FILES)
-		if form.is_valid():
-			form.save()
-	else:
-		form=PetPhotoUpload()
-	return render(request, "front/upload_photo.html", {"form":form})
 
 @login_required
 def add_pet(request):

@@ -23,10 +23,8 @@ class PetForm(forms.ModelForm):
         }
 
 class PetPhotoUpload(forms.ModelForm):
-    Image=forms.FileField()
     class Meta:
         model=PetImageModel
         fields=[
-            "Pet",
             "Image"
         ]

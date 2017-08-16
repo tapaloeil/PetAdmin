@@ -86,5 +86,5 @@ class PetModel(TimeStampedModel):
 
 class PetImageModel(TimeStampedModel):
 	Pet=models.ForeignKey(PetModel, related_name='PetPhotos')
-	Image= FilerImageField()
+	Image= models.ImageField(upload_to = 'pictures/%y%m%d')
 
