@@ -1,4 +1,5 @@
 {% extends 'front/base.html' %}
+{% load widget_tweaks %}
 {% load static %}
 {% load thumbnail %}
 {% load i18n %}
@@ -104,7 +105,19 @@
                                     </div>
                                     <div class="tab-pane" id="modifier">
                                         <form method="POST" action=''>{% csrf_token %}
-                                            {{ form.as_p }}
+                                              {% for hidden_field in form.hidden_fields %}
+                                                {{ hidden_field }}
+                                              {% endfor %}
+
+                                              {% for field in form.visible_fields %}
+                                                <div class="form-group">
+                                                  {{ field.label_tag }}
+                                                  {% render_field field class="form-control" %}
+                                                  {% if field.help_text %}
+                                                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                                                  {% endif %}
+                                                </div>
+                                              {% endfor %}
                                             <input class="btn btn-success" type="submit" value="Enregistrer les modifications">
                                         </form>
                                     </div>

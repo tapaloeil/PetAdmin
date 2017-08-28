@@ -20,7 +20,8 @@ class PetForm(forms.ModelForm):
             "Status"
         ]
         widgets = {
-            'BirthDt': forms.DateInput(attrs={'type': 'date'})
+            'BirthDt': forms.DateInput(attrs={'type': 'date'}),
+            'Description':forms.Textarea(attrs={'cols':80, 'rows':10})
         }
 
 class PetPhotoUpload(forms.ModelForm):

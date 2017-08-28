@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 	'mptt',
 	'rest_framework',
 	'crispy_forms',
+	'widget_tweaks',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

@@ -2,6 +2,11 @@ body {
     background-color: #ffffff!important;
 }
 
+div.content{
+    max-width: 550px;
+    margin: 0 auto;
+}
+
 .main-raised {
     box-shadow: none;}
 
